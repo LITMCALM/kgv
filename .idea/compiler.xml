@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="kgv-web" />
+        <module name="kgv-common" />
+        <module name="fileserver" />
+        <module name="kgv-service" />
+        <module name="kgv-mapper" />
+        <module name="kgv-model" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="fileserver" target="1.8" />
+      <module name="kgv" target="1.8" />
+      <module name="kgv-common" target="1.8" />
+      <module name="kgv-mapper" target="1.8" />
+      <module name="kgv-model" target="1.8" />
+      <module name="kgv-service" target="1.8" />
+      <module name="kgv-web" target="1.8" />
+      <module name="kgv-web (1)" target="1.5" />
+      <module name="kgvserver" target="1.8" />
+      <module name="service" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="fileserver" options="-parameters" />
+      <module name="kgv" options="" />
+      <module name="kgv-common" options="-parameters" />
+      <module name="kgv-mapper" options="-parameters" />
+      <module name="kgv-model" options="-parameters" />
+      <module name="kgv-service" options="-parameters" />
+      <module name="kgv-web" options="-parameters" />
+      <module name="kgvserver" options="" />
+      <module name="service" options="-parameters" />
+    </option>
+  </component>
+</project>

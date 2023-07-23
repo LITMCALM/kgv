@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.snnu.lier.mapper.ProvinceDao">
+    <sql id="provinceSql">
+        province_id,province_name,province_introduction,location,geographical_position,area,climate_condition,population
+    </sql>
+
+    <resultMap id="provinceMap" type="County">
+        <id column="province_id" property="countyId"/>
+        <result column="province_name" property="countyName"/>
+        <result column="province_introduction" property="provinceIntroduction"/>
+        <result column="location" property="location"/>
+        <result column="geographical_position" property="geographicalPosition"/>
+        <result column="area" property="area"/>
+        <result column="climate_condition" property="climateCondition"/>
+        <result column="population" property="population"/>
+    </resultMap>
+
+    <select id="queryByProvinceName" resultMap="provinceMap">
+        select <include refid="provinceSql"/>
+        from province
+        where province_name = #{provinceName}
+    </select>
+
+    <select id="queryAll" resultMap="provinceMap">
+        select <include refid="provinceSql"/>
+        from province
+    </select>
+
+    <select id="queryByProvinceId" resultMap="provinceMap">
+        select <include refid="provinceSql"/>
+        from province
+        where province_id = #{provinceId}
+    </select>
+</mapper>

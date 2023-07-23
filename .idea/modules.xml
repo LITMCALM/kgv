@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/fileserver/fileserver.iml" filepath="$PROJECT_DIR$/fileserver/fileserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kgv.iml" filepath="$PROJECT_DIR$/kgv.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kgvserver/kgv-common/kgv-common.iml" filepath="$PROJECT_DIR$/kgvserver/kgv-common/kgv-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kgvserver/kgv-mapper/kgv-mapper.iml" filepath="$PROJECT_DIR$/kgvserver/kgv-mapper/kgv-mapper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kgvserver/kgv-model/kgv-model.iml" filepath="$PROJECT_DIR$/kgvserver/kgv-model/kgv-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kgvserver/kgv-service/kgv-service.iml" filepath="$PROJECT_DIR$/kgvserver/kgv-service/kgv-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kgvserver/kgv-web/kgv-web.iml" filepath="$PROJECT_DIR$/kgvserver/kgv-web/kgv-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kgvserver/kgvserver.iml" filepath="$PROJECT_DIR$/kgvserver/kgvserver.iml" />
+    </modules>
+  </component>
+</project>

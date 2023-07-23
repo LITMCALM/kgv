@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.snnu.lier.mapper.NameMappingDao">
+    <resultMap id="mappingMap" type="NameMapping">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="class" property="clazz"/>
+    </resultMap>
+
+    <select id="queryByString" resultMap="mappingMap">
+        select id,name,class
+        from mapping
+        where name = #{queryString}
+    </select>
+</mapper>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.snnu.lier.mapper.FoodDao">
+
+    <sql id="foodQuerySql">
+         food_id,chinese_name,english_name,alias_name,place,feature, classification,ingredient,brief_introduction
+    </sql>
+
+    <resultMap id="foodMap" type="Food">
+        <id property="id" column="food_id"/>
+        <result property="name" column="chinese_name"/>
+        <result property="englishName" column="english_name"/>
+        <result property="aliasName" column="alias_name"/>
+        <result property="place" column="place"/>
+        <result property="feature" column="feature"/>
+        <result property="classification" column="classification"/>
+        <result property="ingredient" column="ingredient"/>
+        <result property="briefIntroduction" column="brief_introduction"/>
+    </resultMap>
+
+    <select id="queryFoodByName" resultMap="foodMap">
+        select <include refid="foodQuerySql"/>
+        from food
+        where chinese_name = #{foodName}
+    </select>
+
+    <select id="queryByFoodId" resultMap="foodMap">
+        select <include refid="foodQuerySql"/>
+        from food
+        where food_id = #{foodId}
+    </select>
+
+    <select id="queryAll" resultMap="foodMap">
+        select <include refid="foodQuerySql"/>
+        from food
+    </select>
+
+
+    <select id="fuzzyQueryByFoodName" resultMap="foodMap">
+        select <include refid="foodQuerySql"/>
+        from food
+        where chinese_name like '%${foodName}%'
+    </select>
+</mapper>

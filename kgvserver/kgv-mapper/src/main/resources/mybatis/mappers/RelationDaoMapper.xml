@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.snnu.lier.mapper.RelationDao">
+
+    <resultMap id="relationMap" type="Relation">
+        <id column="food_id" property="entity1Id"/>
+        <result column="city_id" property="entity2Id"/>
+    </resultMap>
+
+    <select id="queryFoodToCityRelation" resultMap="relationMap">
+        select food_id , city_id
+        from food_to_city
+        where food_id = #{foodId}
+    </select>
+
+    <select id="queryCityContainFoodRelation" resultType="Relation" resultSets="java.util.List">
+        select city_id entity1Id, food_id entity2Id
+        from food_to_city
+        where city_id = #{cityId}
+    </select>
+
+    <select id="queryRegionContainFoodRelation" resultType="Relation" resultSets="java.util.List">
+        select region_id entity1Id, food_id entity2Id
+        from food_to_region
+        where region_id = #{regionId}
+    </select>
+</mapper>

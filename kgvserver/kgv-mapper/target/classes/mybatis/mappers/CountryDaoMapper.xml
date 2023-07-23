@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.snnu.lier.mapper.CountyDao">
+    <sql id="countySql">
+        county_id , county_name
+    </sql>
+
+    <resultMap id="countyMap" type="County">
+        <id column="county_id" property="countyId"/>
+        <result column="county_name" property="countyName"/>
+    </resultMap>
+    <select id="queryByCountyName" resultMap="countyMap">
+        select <include refid="countySql"/>
+        from county
+        where county = #{countyName}
+    </select>
+
+    <select id="queryAll" resultMap="countyMap">
+        select <include refid="countySql"/>
+        from county
+    </select>
+
+    <select id="queryByCountyId" resultMap="countyMap">
+        select <include refid="countySql"/>
+        from county
+        where county_id = #{countyId}
+    </select>
+</mapper>

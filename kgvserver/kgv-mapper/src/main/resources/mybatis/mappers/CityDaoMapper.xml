@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.snnu.lier.mapper.CityDao">
+
+
+    <sql id="citySql">city_id,city_name,brief_introduction, alias_name,english_name,region, climate_condition,scenic_spots,area,population,province</sql>
+
+    <resultMap id="cityMap" type="City">
+        <id column="city_id" property="id"/>
+        <result column="city_name" property="name"/>
+        <result column="brief_introduction" property="briefIntroduction"/>
+        <result column="alias_name" property="aliasName"/>
+        <result column="english_name" property="englishName"/>
+        <result column="region" property="region"/>
+        <result column="climate_condition" property="climateCondition"/>
+        <result column="scenic_spots" property="scenicSpots"/>
+        <result column="area" property="area"/>
+        <result column="population" property="population"/>
+        <result column="province" property="province"/>
+    </resultMap>
+
+    <select id="queryByCityName" resultMap="cityMap">
+        select <include refid="citySql"/>
+        from city
+        where city_name = #{cityName}
+    </select>
+
+    <select id="queryByCityId" resultMap="cityMap">
+        select <include refid="citySql"/>
+        from city
+        where city_id = #{cityId}
+    </select>
+
+    <select id="queryAll" resultMap="cityMap">
+        select <include refid="citySql"/>
+        from city
+    </select>
+</mapper>
